@@ -166,14 +166,14 @@ class Package implements NodeInterface
         }
 
         if ($this->getReferenceNumber()
-            && !is_null($this->getReferenceNumber()->getCode())
+            // && !is_null($this->getReferenceNumber()->getCode()) // required only if "origin/destination pair is US/US or PR/PR" (PDF XML page 117)
             && !is_null($this->getReferenceNumber()->getValue())
         ) {
             $packageNode->appendChild($this->getReferenceNumber()->toNode($document));
         }
         
         if ($this->getReferenceNumber2()
-            && !is_null($this->getReferenceNumber2()->getCode())
+            // && !is_null($this->getReferenceNumber2()->getCode()) // required only if "origin/destination pair is US/US or PR/PR" (PDF XML page 117)
             && !is_null($this->getReferenceNumber2()->getValue())
         ) {
             $packageNode->appendChild($this->getReferenceNumber2()->toNode($document));
